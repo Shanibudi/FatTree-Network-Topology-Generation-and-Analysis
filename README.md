@@ -12,7 +12,7 @@ Parameter  Type     Default   Description
 
 To run the script, run for example:
 
-\textit{python fattree.py --k 4 --fail 1}
+```python fattree.py --k 4 --fail 1```
 
 This command builds a 3-tier fat-tree with k=4 and randomly removes 1% of its links before computing metrics.
 
