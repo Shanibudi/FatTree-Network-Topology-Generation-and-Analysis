@@ -11,7 +11,8 @@ Parameter  Type     Default   Description
 --fail     Float    0.0       Percentage of link failures to simulate (0–100).
 
 To run the script, run for example:
-python fattree.py --k 4 --fail 1
+
+\textit{python fattree.py --k 4 --fail 1}
 
 This command builds a 3-tier fat-tree with k=4 and randomly removes 1% of its links before computing metrics.
 
