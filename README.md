@@ -7,8 +7,11 @@ This project implements a three-tier fat-tree network topology following the des
 The script allows generate, analyze, and visualize fat-tree architectures for data center networks. It supports fault simulation through link failure modeling and provides tools to analyze the resulting network performance metrics (such as average path length) under various failure rates.
 
 ## How to run this code-
+
 The script accepts the following command-line arguments:
+
 Parameter  Type     Default   Description
+
 --k        Integer  4         Number of ports per switch (must be even). Controls network size.
 --fail     Float    0.0       Percentage of link failures to simulate (0–100).
 
