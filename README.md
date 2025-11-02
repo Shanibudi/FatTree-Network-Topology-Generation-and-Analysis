@@ -2,7 +2,7 @@
 
 ## Overview-
 
-This project implements a three-tier fat-tree network topology following the design principles described in https://dl.acm.org/doi/pdf/10.1145/1402946.1402967 
+This project implements a three-tier fat-tree network topology following the design principles described in paper [1] https://dl.acm.org/doi/pdf/10.1145/1402946.1402967 
 
 The script allows generate, analyze, and visualize fat-tree architectures for data center networks. It supports fault simulation through link failure modeling and provides tools to analyze the resulting network performance metrics (such as average path length) under various failure rates.
 
