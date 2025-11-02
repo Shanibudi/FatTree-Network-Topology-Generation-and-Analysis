@@ -10,10 +10,10 @@ The script allows generate, analyze, and visualize fat-tree architectures for da
 
 The script accepts the following command-line arguments:
 
-Parameter  Type     Default   Description
-
---k        Integer  4         Number of ports per switch (must be even). Controls network size.
---fail     Float    0.0       Percentage of link failures to simulate (0–100).
+| Parameter | Type | Default | Description |
+|------------|------|----------|-------------|
+| `--k` | Integer | 4 | Number of ports per switch (must be even). Controls network size. |
+| `--fail` | Float | 0.0 | Percentage of link failures to simulate (0–100). |
 
 To run the script, run for example:
 
