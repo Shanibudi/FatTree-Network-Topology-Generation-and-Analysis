@@ -1,10 +1,12 @@
 # FatTree Network Topology Generation and Analysis
-Overview-
+
+## Overview-
+
 This project implements a three-tier fat-tree network topology following the design principles described in https://dl.acm.org/doi/pdf/10.1145/1402946.1402967 
 
 The script allows generate, analyze, and visualize fat-tree architectures for data center networks. It supports fault simulation through link failure modeling and provides tools to analyze the resulting network performance metrics (such as average path length) under various failure rates.
 
-How to run this code-
+## How to run this code-
 The script accepts the following command-line arguments:
 Parameter  Type     Default   Description
 --k        Integer  4         Number of ports per switch (must be even). Controls network size.
