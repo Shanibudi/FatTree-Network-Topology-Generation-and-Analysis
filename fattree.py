@@ -114,30 +114,51 @@ def main():
     G = generate_fat_tree(args.k)
     print(f"Generated fat-tree topology (k={args.k}) with {len(G.nodes)} nodes and {len(G.edges)} edges")
 
-    if args.fail > 0:
-        simulate_failures(G, args.fail)
-        print(f"Simulated {args.fail}% link failures")
-
-    avg_len = average_path_length(G)
-    print(f"Average path length: {avg_len:.3f}")
-
-    # Hierarchical visualization
+    # Visualization of single topology before failures
     pos = hierarchical_pos(G)
     plt.figure(figsize=(10, 6))
     nx.draw(G, pos,
             node_size=60,
             with_labels=False,
             node_color=[{"core": "red", "aggregation": "orange", "edge": "green", "host": "skyblue"}[G.nodes[n]["layer"]] for n in G.nodes()])
-    plt.title(f"Hierarchical Fat-Tree (k={args.k}, Fail={args.fail}%)")
+    plt.title(f"Fat-Tree Topology for k={args.k}")
     plt.axis("off")
-    plt.savefig(f"plots/fattree_topology_k{args.k}_fail{args.fail}.png", dpi=300, bbox_inches="tight")
-    plt.show()
+    before_path = f"plots/fattree_topology_k{args.k}.png"
+    plt.savefig(before_path, dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"Saved before-failure topology to: {os.path.abspath(before_path)}")
+
+    # Simulate failures and visualize affected topology
+    if args.fail > 0:
+        G_before = G.copy()  # save full copy before removing links
+        failed_edges = simulate_failures(G, args.fail)
+        print(f"Simulated {len(failed_edges)} failed links ({args.fail}%)")
+
+        plt.figure(figsize=(10, 6))
+        # gray: all original edges
+        nx.draw_networkx_edges(G_before, pos, edge_color="lightgray", width=0.8, alpha=0.5)
+        # red: failed edges
+        nx.draw_networkx_edges(G_before, pos, edgelist=failed_edges, edge_color="red", width=2.0)
+        # black: remaining edges
+        nx.draw_networkx_edges(G, pos, edge_color="black", width=1.0)
+        nx.draw_networkx_nodes(G_before, pos,
+                            node_size=60,
+                            node_color=[{"core": "red", "aggregation": "orange", "edge": "green", "host": "skyblue"}[G_before.nodes[n]["layer"]] for n in G_before.nodes()])
+        plt.title(f"Fat-Tree Topology after {args.fail}% Link Failures (k={args.k})")
+        plt.axis("off")
+        after_path = f"plots/fattree_after_fail_k{args.k}_fail{args.fail}.png"
+        plt.savefig(after_path, dpi=300, bbox_inches="tight")
+        plt.close()
+        print(f"Saved after-failure topology to: {os.path.abspath(after_path)}")
+
+    avg_len = average_path_length(G)
+    print(f"Average path length: {avg_len:.3f}")
 
     # Run performance experiments (optional)
     if args.run_experiments:
         print("\nRunning experiments...\n")
         k_values = [4, 6, 8, 10, 12]
-        failure_rates = [0, 1, 2, 5, 10, 15, 20]
+        failure_rates = [0, 10, 20, 30, 40]
 
         # Experiment 1
         results = experiment_failure_impact(k_values, failure_rates)
