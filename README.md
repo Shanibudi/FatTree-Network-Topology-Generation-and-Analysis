@@ -67,4 +67,6 @@ This behavior highlights why fat-tree topologies are widely adopted in large-sca
 
 A plot demonstrating this experiment can be found at plots/hosts_vs_ports.png.
 
+## References
+
 [1] M. Al-Fares, A. Loukissas, and A. Vahdat, “A scalable, commodity data center network architecture,” SIGCOMM Comput. Commun. Rev., vol. 38, no. 4, pp. 63–74, 2008.
