@@ -56,6 +56,8 @@ This experiment analyzes how the average path length in a three-tier fat-tree to
 Simulations were conducted for five network sizes — k = 4, 6, 8, 10, and 12, where k represents the number of ports per switch.
 For each configuration, random link failures were introduced at discrete rates of \{0, 1, 2, 5, 10, 20, 30, 40\}\% of the total links, and the mean shortest-path distance was computed across all reachable hosts.
 
+##### Discussion
+
 The results show that smaller networks (e.g., k=4) exhibit higher variability in the average path length as the failure rate increases.
 This instability occurs because in smaller topologies, each failed link represents a larger fraction of the total connectivity, making the network more sensitive to random failures.
 In contrast, larger fat-tree configurations (k \geq 8) remain remarkably stable, showing only minor or gradual increases in path length as the failure percentage grows.
@@ -71,6 +73,8 @@ A plot demonstrating this experiment shown below:
 This experiment analyzes how the number of supported hosts scales with the switch port count (k).
 For each value of k = 4, 6, 8, 10 and 12 , the theoretical maximum number of hosts in a three-tier fat-tree was computed using the formula: k<sup>3</sup> / 4 .
 This metric represents the scalability potential of the fat-tree architecture.
+
+##### Discussion
 
 The results clearly show that the number of supported hosts increases cubically with the port count.
 For instance, increasing k from 4 to 12 results in a dramatic rise from 16 hosts to 432 hosts, emphasizing the excellent scalability of the fat-tree design.
