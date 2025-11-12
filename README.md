@@ -6,6 +6,17 @@ This project implements a three-tier fat-tree network topology following the des
 
 The script allows generate, analyze, and visualize fat-tree architectures for data center networks. It supports fault simulation through link failure modeling and provides tools to analyze the resulting network performance metrics (such as average path length) under various failure rates.
 
+## Background-
+
+For a fat-tree using k-port switches:
+	•	Core layer with (k/2)^2 switches
+	•	Aggregation layer with k^2 / 2 switches
+	•	Edge layer with k^2 / 2 switches
+	•	Hosts k^3 / 4
+
+Each pod has k/2 edge + k/2 aggregation switches.
+
+
 ## How to run this code-
 
 The script accepts the following command-line arguments:
