@@ -33,6 +33,7 @@ The script accepts the following command-line arguments:
 |------------|------|----------|-------------|
 | `--k` | Integer | 4 | Number of ports per switch (must be even). Controls network size. |
 | `--fail` | Float | 0.0 | Percentage of link failures to simulate (0–100). |
+| `--run_experiments` | Flag (Boolean) | False | When included, runs two experiments: (1) average path length vs. link failure rate, and (2) number of supported hosts vs. switch port count. |
 
 To run the script, run for example:
 
