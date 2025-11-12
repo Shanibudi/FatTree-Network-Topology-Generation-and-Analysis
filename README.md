@@ -41,5 +41,12 @@ To run the script, run for example:
 
 This command builds a 3-tier fat-tree with k=4 and randomly removes 1% of its links before computing metrics.
 
+## Metric Analysis and Results
+
+#### Experiment 1: Impact of Link Failures on Average Path Length
+
+This experiment evaluates how the average path length in a three-tier fat-tree topology changes as a function of link failure rate.
+Simulations were conducted for three network sizes — k = 4, 6, and 8, where k represents the number of ports per switch.
+For each configuration we introduced random link failures at the discrete rates \{0, 1, 2, 5, 10\}\% of the total links and then computed the mean shortest path length across all reachable hosts.
 
 [1] M. Al-Fares, A. Loukissas, and A. Vahdat, “A scalable, commodity data center network architecture,” SIGCOMM Comput. Commun. Rev., vol. 38, no. 4, pp. 63–74, 2008.
