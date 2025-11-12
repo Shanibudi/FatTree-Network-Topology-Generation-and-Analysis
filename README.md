@@ -53,9 +53,11 @@ The results show that smaller networks (e.g., k=4) exhibit higher variability in
 This instability occurs because in smaller topologies, each failed link represents a larger fraction of the total connectivity, making the network more sensitive to random failures.
 In contrast, larger fat-tree configurations (k \geq 8) remain remarkably stable, showing only minor or gradual increases in path length as the failure percentage grows.
 This demonstrates the strong fault tolerance and inherent redundancy of the fat-tree architecture — as k increases, the number of alternative equal-cost paths grows, maintaining stable connectivity and nearly constant average path lengths even under significant link failures.
+
+A plot demonstrating this experiment shown below:
+
 <img width="2072" height="1634" alt="image" src="https://github.com/user-attachments/assets/7bd1d886-7f39-472b-862a-0f7ec53aaf7e" />
 
-A plot demonstrating this experiment can be found at plots/failure_vs_path_length.png.
 
 ### Experiment 2: Hosts Supported vs. Switch Port Count
 
@@ -67,7 +69,10 @@ The results clearly show that the number of supported hosts increases cubically 
 For instance, increasing k from 4 to 12 results in a dramatic rise from 16 hosts to 432 hosts, emphasizing the excellent scalability of the fat-tree design.
 This property demonstrates why fat-tree topologies are widely adopted in large-scale data centers — they allow the network to expand significantly without fundamental architectural changes, maintaining balance, symmetry, and performance efficiency even as the system grows.
 
-A plot demonstrating this experiment can be found at plots/hosts_vs_ports.png.
+A plot demonstrating this experiment shown below:
+
+<img width="2085" height="1634" alt="image" src="https://github.com/user-attachments/assets/c8ff41a1-e14f-419b-ae11-88290537bfb0" />
+
 
 ## References
 
