@@ -26,7 +26,7 @@ In order to run this code, you will need ti install the folowing dependencies:
 
 ## How to run this code-
 
-# Input parameters- 
+### Input parameters- 
 The script accepts the following command-line arguments:
 
 | Parameter | Type | Default | Description |
