@@ -8,7 +8,9 @@ The script allows generate, analyze, and visualize fat-tree architectures for da
 
 All generated visualizations and experimental results are automatically saved under the plots/ directory.
 This includes:
+
 	•	The fat-tree topology before and after link failures, showing the structural impact of link disruptions.
+	
 	•	The plots of experimental results, illustrating how network metrics vary with topology size and link failure rates.
 
 All figures can be found inside the plots/ folder within this repository.
