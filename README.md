@@ -19,6 +19,10 @@ For a fat-tree with port count k:
 
 Each pod has k/2 edge + k/2 aggregation switches.
 
+## Requirements-
+In order to run this code, you will need ti install the folowing dependencies:
+
+```pip install networkx matplotlib numpy```
 
 ## How to run this code-
 
