@@ -49,9 +49,9 @@ This experiment evaluates how the average path length in a three-tier fat-tree t
 Simulations were conducted for three network sizes — k = 4, 6, and 8, where k represents the number of ports per switch.
 For each configuration we introduced random link failures at the discrete rates \{0, 1, 2, 5, 10\}\% of the total links and then computed the mean shortest path length across all reachable hosts.
 
-The results show that the average path length remains almost constant as the failure rate increases, demonstrating the high resilience and redundancy of the fat-tree topology. 
-Due to the multiple equal-cost paths characteristic of fat-tree topologies, this topology ensure that even when several links fail, connectivity and performance are only minimally affected.
-Larger configurations (higher k) exhibit slightly higher path lengths due to deeper hierarchical depth but also demonstrate stronger robustness against link losses.
+The results show that the average path length remains almost constant as the failure rate increases, demonstrating the high resilience, redundancy, and fault tolerance of the fat-tree topology.
+Because of its multiple equal-cost paths, the fat-tree design maintains nearly identical performance even when several links fail, ensuring that network connectivity and throughput are preserved under fault conditions.
+Larger configurations (higher k) exhibit slightly higher path lengths due to increased hierarchical depth but also demonstrate stronger fault tolerance, as additional ports provide more redundant routes and enhance network reliability.
 
 A plot demonstrating this experiment can be found at plots/failure_vs_path_length.png.
 
@@ -64,5 +64,7 @@ This metric captures the scalability potential of the network.
 The number of supported hosts increases cubically with the switch port count.
 For example, increasing k from 4 to 8 results in an eightfold increase in host capacity, demonstrating the excellent scalability of the fat-tree design.
 This behavior highlights why fat-tree topologies are widely adopted in large-scale data centers — they allow significant expansion without redesigning the network architecture.
+
+A plot demonstrating this experiment can be found at plots/hosts_vs_ports.png.
 
 [1] M. Al-Fares, A. Loukissas, and A. Vahdat, “A scalable, commodity data center network architecture,” SIGCOMM Comput. Commun. Rev., vol. 38, no. 4, pp. 63–74, 2008.
