@@ -46,8 +46,8 @@ This command builds a 3-tier fat-tree with k=4 and randomly removes 1% of its li
 #### Experiment 1: Impact of Link Failures on Average Path Length
 
 This experiment evaluates how the average path length in a three-tier fat-tree topology changes as a function of link failure rate.
-Simulations were conducted for three network sizes — k = 4, 6, and 8, where k represents the number of ports per switch.
-For each configuration we introduced random link failures at the discrete rates \{0, 1, 2, 5, 10\}\% of the total links and then computed the mean shortest path length across all reachable hosts.
+Simulations were conducted for three network sizes — k = 4, 6, 8, 10 and 12 where k represents the number of ports per switch.
+For each configuration we introduced random link failures at the discrete rates \{0, 1, 2, 5, 10, 20 ,30 ,40\}\% of the total links and then computed the mean shortest path length across all reachable hosts.
 
 The results show that the average path length remains almost constant as the failure rate increases, demonstrating the high resilience, redundancy, and fault tolerance of the fat-tree topology.
 Because of its multiple equal-cost paths, the fat-tree design maintains nearly identical performance even when several links fail, ensuring that network connectivity and throughput are preserved under fault conditions.
@@ -58,7 +58,7 @@ A plot demonstrating this experiment can be found at plots/failure_vs_path_lengt
 ### Experiment 2: Hosts Supported vs. Switch Port Count
 
 This experiment analyzes how the number of supported hosts scales with the switch port count (k).
-For each value of k = 4, 6, 8, the theoretical maximum number of hosts in a three-tier fat-tree was computed using the formula: k<sup>3</sup> / 4 .
+For each value of k = 4, 6, 8, 10 and 12 , the theoretical maximum number of hosts in a three-tier fat-tree was computed using the formula: k<sup>3</sup> / 4 .
 This metric captures the scalability potential of the network.
 
 The number of supported hosts increases cubically with the switch port count.
