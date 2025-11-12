@@ -12,10 +12,10 @@ For a fat-tree with port count k:
 
 | Layer | Number of Devices |
 |--------|--------------------|
-| Core Switches | (k/2)^2 |
-| Aggregation Switches | k^2 / 2 |
-| Edge Switches | k^2 / 2 |
-| Hosts | k^3 / 4 |
+| Core Switches | (k/2)<sup>2</sup> |
+| Aggregation Switches | k<sup>2</sup> / 2 |
+| Edge Switches | k<sup>2</sup> / 2 |
+| Hosts | k<sup>3</sup> / 4 |
 
 Each pod has k/2 edge + k/2 aggregation switches.
 
