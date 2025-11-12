@@ -45,13 +45,14 @@ This command builds a 3-tier fat-tree with k=4 and randomly removes 1% of its li
 
 #### Experiment 1: Impact of Link Failures on Average Path Length
 
-This experiment evaluates how the average path length in a three-tier fat-tree topology changes as a function of link failure rate.
-Simulations were conducted for three network sizes — k = 4, 6, 8, 10 and 12 where k represents the number of ports per switch.
-For each configuration we introduced random link failures at the discrete rates \{0, 1, 2, 5, 10, 20 ,30 ,40\}\% of the total links and then computed the mean shortest path length across all reachable hosts.
+This experiment analyzes how the average path length in a three-tier fat-tree topology changes as a function of the link failure rate.
+Simulations were conducted for five network sizes — k = 4, 6, 8, 10, and 12, where k represents the number of ports per switch.
+For each configuration, random link failures were introduced at discrete rates of \{0, 1, 2, 5, 10, 20, 30, 40\}\% of the total links, and the mean shortest-path distance was computed across all reachable hosts.
 
-The results show that the average path length remains almost constant as the failure rate increases, demonstrating the high resilience, redundancy, and fault tolerance of the fat-tree topology.
-Because of its multiple equal-cost paths, the fat-tree design maintains nearly identical performance even when several links fail, ensuring that network connectivity and throughput are preserved under fault conditions.
-Larger configurations (higher k) exhibit slightly higher path lengths due to increased hierarchical depth but also demonstrate stronger fault tolerance, as additional ports provide more redundant routes and enhance network reliability.
+The results show that smaller networks (e.g., k=4) exhibit higher variability in the average path length as the failure rate increases.
+This instability occurs because in smaller topologies, each failed link represents a larger fraction of the total connectivity, making the network more sensitive to random failures.
+In contrast, larger fat-tree configurations (k \geq 8) remain remarkably stable, showing only minor or gradual increases in path length as the failure percentage grows.
+This demonstrates the strong fault tolerance and inherent redundancy of the fat-tree architecture — as k increases, the number of alternative equal-cost paths grows, maintaining stable connectivity and nearly constant average path lengths even under significant link failures.
 
 A plot demonstrating this experiment can be found at plots/failure_vs_path_length.png.
 
@@ -59,11 +60,11 @@ A plot demonstrating this experiment can be found at plots/failure_vs_path_lengt
 
 This experiment analyzes how the number of supported hosts scales with the switch port count (k).
 For each value of k = 4, 6, 8, 10 and 12 , the theoretical maximum number of hosts in a three-tier fat-tree was computed using the formula: k<sup>3</sup> / 4 .
-This metric captures the scalability potential of the network.
+This metric represents the scalability potential of the fat-tree architecture.
 
-The number of supported hosts increases cubically with the switch port count.
-For example, increasing k from 4 to 8 results in an eightfold increase in host capacity, demonstrating the excellent scalability of the fat-tree design.
-This behavior highlights why fat-tree topologies are widely adopted in large-scale data centers — they allow significant expansion without redesigning the network architecture.
+The results clearly show that the number of supported hosts increases cubically with the port count.
+For instance, increasing k from 4 to 12 results in a dramatic rise from 16 hosts to 432 hosts, emphasizing the excellent scalability of the fat-tree design.
+This property demonstrates why fat-tree topologies are widely adopted in large-scale data centers — they allow the network to expand significantly without fundamental architectural changes, maintaining balance, symmetry, and performance efficiency even as the system grows.
 
 A plot demonstrating this experiment can be found at plots/hosts_vs_ports.png.
 
