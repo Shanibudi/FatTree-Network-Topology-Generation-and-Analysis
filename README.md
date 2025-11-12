@@ -6,10 +6,10 @@ This project implements a three-tier fat-tree network topology following the des
 
 The script allows generate, analyze, and visualize fat-tree architectures for data center networks. It supports fault simulation through link failure modeling and provides tools to analyze the resulting network performance metrics (such as average path length) under various failure rates.
 
-All generated visualizations and experimental results are automatically **saved under the `plots/` directory**.  
+All generated visualizations and experimental results are automatically saved under the `plots/` directory.  
 This includes:
-- The **fat-tree topology** before and after link failures, illustrating how the network structure changes following link disruptions.  
-- The **experimental result plots**, showing how key metrics evolve with different topology sizes and link failure percentages.  
+- The fat-tree topology before and after link failures, illustrating how the network structure changes following link disruptions.  
+- The experimental result plots, showing how key metrics evolve with different topology sizes and link failure percentages.  
 
 All figures can be found inside the `plots/` folder within this repository.
 
