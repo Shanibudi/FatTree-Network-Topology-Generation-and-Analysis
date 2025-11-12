@@ -136,8 +136,8 @@ def main():
     # Run performance experiments (optional)
     if args.run_experiments:
         print("\nRunning experiments...\n")
-        k_values = [4, 6, 8]
-        failure_rates = [0, 1, 2, 5, 10]
+        k_values = [4, 6, 8, 10, 12]
+        failure_rates = [0, 1, 2, 5, 10, 15, 20]
 
         # Experiment 1
         results = experiment_failure_impact(k_values, failure_rates)
